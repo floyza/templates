@@ -12,10 +12,10 @@
         haskellPackages = pkgs.haskellPackages;
 
         jailbreakUnbreak = pkg:
-          pkgs.haskell.lib.doJailbreak (pkg.overrideAttrs (_: { meta = [ ]; }));
+          pkgs.haskell.lib.doJailbreak (pkg.overrideAttrs (_: { meta = { }; }));
 
         packageName = throw "put your package name here!";
-      in {
+      in rec {
         packages.${packageName} = haskellPackages.callCabal2nix packageName self
           rec {
             # Dependency overrides go here (use to remove cabal version constraints)
@@ -27,7 +27,7 @@
         defaultPackage = self.packages.${system}.${packageName};
 
         devShell = haskellPackages.shellFor {
-          packages = ps [ ps.${packageName} ];
+          packages = ps: [ packages.${packageName} ];
           buildInputs = with haskellPackages; [
             haskell-language-server
             hoogle
