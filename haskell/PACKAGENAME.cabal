@@ -7,7 +7,7 @@ license:             LICENSE_GOES_HERE
 license-file:        LICENSE
 author:              Gavin Downard
 maintainer:          gavin.downard@runbox.com
-copyright:           2021, Gavin Downrd
+copyright:           2021, Gavin Downard
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
