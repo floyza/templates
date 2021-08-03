@@ -11,6 +11,10 @@
         path = ./shell;
         description = "A basic devShell skeleton";
       };
+      stack = {
+        path = ./stack;
+        description = "A haskell project using stack";
+      };
     };
   };
 }
