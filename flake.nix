@@ -5,7 +5,7 @@
     templates = {
       haskell = {
         path = ./haskell;
-        description = "A haskell project using cabal2nix";
+        description = "A haskell project using haskell.nix";
       };
       shell = {
         path = ./shell;
